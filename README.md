@@ -19,9 +19,6 @@ Screenshot
 
 Prequisites
 ----
-* [The Go Programming Language](https://golang.org/)
-  * [go-yaml](https://github.com/go-yaml/yaml): install running `go get -u gopkg.in/yaml.v2`
-  * [gorilla-websocket](https://github.com/gorilla/websocket): install running `go get -u github.com/gorilla/websocket`
 * [Imagemagick](https://www.imagemagick.org/): required for PNG output
 * Headless browser with remote debugging (e.g. [Chrome](https://www.google.com/chrome/browser/index.html)): required for PDF output
 
