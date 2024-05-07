@@ -89,6 +89,8 @@ type Contact struct {
 	Webpage  Link   `json:",omitempty"`
 	Linkedin Link   `json:",omitempty"`
 	Github   Link   `json:",omitempty"`
+	Gitlab   Link   `json:",omitempty"`
+	Codeberg Link   `json:",omitempty"`
 }
 
 // Link to URL

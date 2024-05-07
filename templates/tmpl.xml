@@ -19,6 +19,12 @@
     {{- with .Github.URL}}
     <Github>{{.}}</Github>
     {{- end}}
+    {{- with .Gitlab.URL}}
+    <Gitlab>{{.}}</Gitlab>
+    {{- end}}
+    {{- with .Codeberg.URL}}
+    <Codeberg>{{.}}</Codeberg>
+    {{- end}}
     {{- with .Linkedin.URL}}
     <Linkedin>{{.}}</Linkedin>
     {{- end}}
