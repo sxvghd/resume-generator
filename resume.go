@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"text/template"
 	"time"
 
@@ -32,6 +33,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// Refresh output dir
+	outputDir, _ := filepath.Split(*outputPath)
+	if _, err := os.Stat(outputDir); os.IsExist(err) {
+		if err := os.RemoveAll(outputDir); err != nil {
+			log.Fatal(fmt.Errorf("Error refreshing output dir: %s\n",err))
+		}
+	}
+	os.Mkdir(outputDir, os.FileMode(0755))
 
 	// Templates extensions
 	// There must exist a template named TemplatesPath+Extension for each extension
