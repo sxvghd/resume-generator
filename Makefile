@@ -1,4 +1,4 @@
-BROWSER_BIN=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+BROWSER_BIN=chromium
 BROWSER_ADDRESS=127.0.0.1
 BROWSER_PORT=9222
 BROWSER_PAGE=http://${BROWSER_ADDRESS}:${BROWSER_PORT}
@@ -11,7 +11,9 @@ CONVERT_COMMAND=convert -density 500
 .PHONY: start stop example resume
 
 start:
-	{ ${BROWSER_REMOTE} & echo $$! > "remote.PID"; }
+	if [ ! -f remote.PID ]; then \
+		{ ${BROWSER_REMOTE} & echo $$! > "remote.PID"; } \
+        fi
 	sleep 5
 
 stop:
