@@ -6,7 +6,7 @@ BROWSER_REMOTE=(${BROWSER_BIN} --headless=new --disable-gpu \
                  --remote-debugging-address="${BROWSER_ADDRESS}" \
 								 --remote-debugging-port="${BROWSER_PORT}")
 BUILD_COMMAND=go run "resume.go"
-CONVERT_COMMAND=convert -density 500
+CONVERT_COMMAND=convert -density 300
 
 .PHONY: start stop example resume
 
