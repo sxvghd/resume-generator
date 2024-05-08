@@ -2,7 +2,7 @@ BROWSER_BIN=chromium
 BROWSER_ADDRESS=127.0.0.1
 BROWSER_PORT=9222
 BROWSER_PAGE=http://${BROWSER_ADDRESS}:${BROWSER_PORT}
-BROWSER_REMOTE=(${BROWSER_BIN} --headless --disable-gpu \
+BROWSER_REMOTE=(${BROWSER_BIN} --headless=new --disable-gpu \
                  --remote-debugging-address="${BROWSER_ADDRESS}" \
 								 --remote-debugging-port="${BROWSER_PORT}")
 BUILD_COMMAND=go run "resume.go"

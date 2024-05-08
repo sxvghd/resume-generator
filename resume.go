@@ -304,7 +304,7 @@ type wsMessage struct {
 	ID     int64           `json:"id"`
 	Method string          `json:"method"`
 	Params json.RawMessage `json:"params"`
-	Result json.RawMessage `json:"result"`
+	Result json.RawMessage `json:"result,omitempty"`
 }
 
 func wsCommand(ws *websocket.Conn, id int64, method string, params json.RawMessage) ([]byte, error) {
@@ -326,7 +326,7 @@ func wsCommand(ws *websocket.Conn, id int64, method string, params json.RawMessa
 	if err != nil {
 		return nil, fmt.Errorf("Write message to socket failed\n%s", err)
 	}
-	time.Sleep(5 * time.Second)
+	time.Sleep(3 * time.Second)
 
 	// Receive response from socket
 	_, b, err := ws.ReadMessage()
